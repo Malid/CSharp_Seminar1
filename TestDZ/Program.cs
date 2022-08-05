@@ -17,10 +17,10 @@ void Task2()
     int b = Convert.ToInt32(ReadLine());
     int max = 0;
 
-    if (a > b) max = a;
-    if (b > a) max = b;
+    if (a > b) WriteLine("max = " + a);
+    if (b > a) WriteLine("max = " + b);
+    if (a==b) WriteLine("числа одинаковы");
 
-    WriteLine("max = " + max);
 }
 
 
@@ -45,6 +45,7 @@ void Task4()
     if (a > b & a > c) WriteLine(a);
     if (b > a & b > c) WriteLine(b);
     if (c > a & c > b) WriteLine(c);
+    if (a==b  & a ==c) WriteLine("Числа равны");
 }
 
 
