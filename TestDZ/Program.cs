@@ -10,15 +10,15 @@ void Task2()
     Clear();
     Task2Info();
 
-    Write("Введите число 1: ");
+    Write("Введите число a: ");
     int a = Convert.ToInt32(ReadLine());
 
-    Write("Введите число 2: ");
+    Write("Введите число b: ");
     int b = Convert.ToInt32(ReadLine());
     int max = 0;
 
-    if (a>b) max = a;
-    if (b>a) max = b;
+    if (a > b) max = a;
+    if (b > a) max = b;
 
     WriteLine("max = " + max);
 }
@@ -32,6 +32,19 @@ void Task4()
 {
     Clear();
     Task4Info();
+
+    Write("Введите число 1: ");
+    int a = Convert.ToInt32(ReadLine());
+
+    Write("Введите число 2: ");
+    int b = Convert.ToInt32(ReadLine());
+
+    Write("Введите число 3: ");
+    int c = Convert.ToInt32(ReadLine());
+
+    if (a > b & a > c) WriteLine(a);
+    if (b > a & b > c) WriteLine(b);
+    if (c > a & c > b) WriteLine(c);
 }
 
 
@@ -41,7 +54,28 @@ void Task6()
 // -3 -> нет
 // 7 -> нет
 {
-    System.Console.WriteLine("It works!6");
+    Clear();
+    Task6Info();
+
+    Write("Введите число для проверки на чётность: ");
+    var buffer = ReadLine();
+
+    if (int.TryParse(buffer, out var x))//если получается Распарсить то число валидное
+    {
+        if (x % 2 == 0)
+        {
+            WriteLine("да");
+        }
+        else
+        {
+            WriteLine("нет");
+        }
+    }
+    else
+    {
+        WriteLine("Введено некорректное значение!");
+        WriteLine(" ");
+    }
 }
 
 
@@ -50,7 +84,31 @@ void Task8()
 // 5 -> 2, 4
 // 8 -> 2, 4, 6, 8
 {
-    System.Console.WriteLine("It works!8");
+    Clear();
+    Task8Info();
+
+    Write("Введите N: ");
+    var buffer = ReadLine();
+    int counter = 2;
+
+    if (int.TryParse(buffer, out var N))
+    {
+        if (N == 1) WriteLine("Значений нет!");
+        if (counter == N ^ N > 2) Write("2");
+        counter = 3;
+
+        while (counter <= N)
+        {
+            if (counter % 2 == 0) Write(", " + counter);
+            counter++;
+        }
+    }
+    else
+    {//блок некорректных значений
+        WriteLine("Введено некорректное значение!");
+        WriteLine(" ");
+    }
+    WriteLine(" ");
 }
 
 
@@ -117,29 +175,21 @@ while (Key != "q")
         case "2":
             Clear();
             Task2();
-            //выполняем задачу 2
-            //WriteLine("Задача 2");
             break;
 
         case "4":
             Clear();
             Task4();
-            //выполняем задачу 4
-            //WriteLine("Задача 4");
             break;
 
         case "6":
             Clear();
             Task6();
-            //выполняем задачу 6
-            WriteLine("Задача 6");
             break;
 
         case "8":
             Clear();
             Task8();
-            //выполняем задачу 8
-            WriteLine("Задача 8");
             break;
 
         case "m":
